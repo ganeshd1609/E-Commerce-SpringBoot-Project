@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.util.Date;
@@ -11,6 +12,7 @@ import java.util.List;
 
 @Entity
 @AllArgsConstructor
+@NoArgsConstructor
 @Getter
 @Setter
 public class Orders {
@@ -33,7 +35,7 @@ public class Orders {
 
 
 
-    @OneToMany(mappedBy = "order" ,cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "orders" ,cascade = CascadeType.ALL)
     private List<OrderItem> orderItems;
 
 }
