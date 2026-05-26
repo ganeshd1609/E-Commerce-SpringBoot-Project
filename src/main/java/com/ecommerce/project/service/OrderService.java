@@ -3,14 +3,19 @@ package com.ecommerce.project.service;
 import com.ecommerce.project.dto.OrderDto;
 import com.ecommerce.project.model.Orders;
 import com.ecommerce.project.model.User;
+import com.ecommerce.project.repo.OrderRepository;
 import com.ecommerce.project.repo.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.Date;
+import java.util.List;
 import java.util.Map;
 
 public class OrderService {
 
+
+    @Autowired
+    private OrderRepository orderRepository;
 
     @Autowired
     private UserRepository userRepository;
@@ -30,5 +35,10 @@ public class OrderService {
 
 
 
+    }
+
+    public List<Orders> getAll(Orders orders) {
+
+       return orderRepository.findAll();
     }
 }
