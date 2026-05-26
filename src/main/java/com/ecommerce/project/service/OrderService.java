@@ -31,14 +31,12 @@ public class OrderService {
         order.setOrderDate(new Date());
         order.setStatus("pending");
         order.setTotalAmount(totalAmount);
+        return null;
 
 
 
 
     }
 
-    public List<Orders> getAll(Orders orders) {
 
-       return orderRepository.findAll();
-    }
 }
